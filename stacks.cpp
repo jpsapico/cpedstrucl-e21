@@ -1,4 +1,3 @@
-//Sapico
 #include <iostream>
 using namespace std;
 
@@ -9,35 +8,43 @@ class Stack {
       maxelem = num;
       s = new int[maxelem];
     }
-    
+
+  void menu() {
+    cout << "What would you like to do?: \n";
+    cout << "1: Push \n";
+    cout << "2: Pop \n";
+    cout << "3: Display \n";
+    cout << "4: Exit \n";
+  }
+
   void push(int t) {
-  	cout << "Push "<<t<<": \n";
-    if (top == maxelem) 
-		return;
+    cout << "Push " << t << ": \n";
+    if (top == maxelem)
+      return;
     s[top++] = t;
   }
-  
+
   int pop() {
-  	cout << "Pop: \n";
-    if (top == 0) 
-		return -1;
+    cout << "Pop: \n";
+    if (top == 0)
+      return -1;
     return s[--top];
   }
-  
+
   void display() {
     if (top == 0) {
       cout << "(empty)\n";
       return;
     }
-    for (int t = 0; t < top; t++) 
-		cout << s[t] << " ";
+    for (int t = 0; t < top; t++)
+      cout << s[t] << " ";
     cout << "\n";
   }
-  
+
   int empty() {
     return top == 0;
   }
-  
+
   private:
     int * s;
   int top;
@@ -45,32 +52,34 @@ class Stack {
 };
 
 int main() {
-  Stack * s = new Stack(100);
+int a,c;
+Stack * s = new Stack(100);
 
-  s -> display();
-  s -> push(1);
-  s -> display();
-  s -> push(2);
-  s -> display();
-  s -> push(3);
-  s -> display();
-  s -> push(4);
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> push(10);
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
-  s -> pop();
-  s -> display();
+while (1){
+    s -> menu();
+    cin >> a;
+    switch (a){
+    case 1:{
+      	cout<<"enter n: ";
+      	cin>>c;
+        s -> push(c);
+        break;
+      }
+
+    case 2:{
+    	s -> pop();
+        break;
+      }			
+
+    case 3:{
+   		s -> display();
+        break;
+      }
+    case 4:{
+        return 0;
+        break;
+      }
+    }
+  }
   return 1;
 }
