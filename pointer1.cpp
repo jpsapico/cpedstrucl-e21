@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 int main(){
-	int a, x(4), *p1;
-	p1=&x;
+	int num, *p1;
+	p1=&num;
 	cout<<"Enter number: ";
-	cin>>a;
+	cin>>num;
 	cout<<p1;
 }
