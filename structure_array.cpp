@@ -1,25 +1,3 @@
-#include <iostream>
-#include <conio.h>
-using namespace std;
-void display (struct Book[]);
-void insert (int, int, struct Book[]);
-void del (int, int[]);
-void swap (int, int, int []);
-struct Book {
-  	int copies;
-  	double price;
-}book[5];
-	
-int main()
-{
-	int arr[20]={1,2,3,4,5,6,7,8,9,10};
-	while(1)
-	{
-		system ("cls");
-		int choice, v, p, p2;
-		cout << "Array Manipulation\n";
-		cout << "[1] Display \n";
-		cout << "[2] Insert \n";
 //ARRAY MANIPULATION
 #include <iostream>
 #include <conio.h>
@@ -141,42 +119,10 @@ void swap (int position, int position2, struct Book book[])
     temp[position]=book[position];
     book[position]=book[position2];
     book[position2]=temp[position];
-}
+
+	for(int i=0; i<5; i++)
 	{
 		cout << "[" << i << "]" << book[i].copies << endl;
+		cout << "[" << i << "]" << book[i].price << endl;
 	}
-}
-
-void insert(int v, int p, struct Book book[])
-{
-	int i;
-	int x[20]={};
-	for(i=p; i<20; i++)
-	{
-		x[i-p]=a[i];
-	}
-	
-	a[p]=v;
-	for (i=p; i<=20; i++)
-	{
-		a[i+1]=x[i-p];
-	}
-}
-
-void del(int p, int a[])
-{
-	int i;
-	for (i=p; i<20; i++)
-	{
-		a[i]=a[i+1];
-	}
-	a[20-1]=0;
-}
-
-void swap (int p, int p2, int a[])
-{
-	int temp;
-	temp=a[p];
-	a[p]=a[p2];
-	a[p2]=temp;
 }
