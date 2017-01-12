@@ -90,7 +90,7 @@ void delete_occurence(int num) {
     c++;
   }
 }
-//prefixtopostfix,
+
 void insert(int num) {
   int c = 0;
   struct node * temp;
@@ -105,8 +105,6 @@ void insert(int num) {
     append(num);
   }
 }
-
-
 
 void display(struct node * r) {
   r = head;
@@ -207,8 +205,8 @@ int main() {
             cout<<num<<(" deleted successfully\n");
           else
             cout<<num<<(" not found in the list\n");
-        cout<<("Element(s) in the list are : ");
-        display(n);
+            cout<<("Element(s) in the list are : ");
+            display(n);
         }
         break;
       case 6:
