@@ -7,6 +7,7 @@ using namespace std;
 
 void display();
 void push(int);
+void pop();
 
 struct node{
 	int data;
@@ -20,8 +21,9 @@ int main(){
 		int choice;
 		cout << "STACK\n";
 		cout << "[1]-Push \n";
-		cout << "[2]-Traverse \n";
-		cout << "[3]-Exit \n";
+		cout << "[2]-Pop \n";
+		cout << "[3]-Traverse \n";
+		cout << "[4]-Exit \n";
 		cout << "Enter choice: ";
 		cin >> choice;
 		
@@ -31,11 +33,14 @@ int main(){
 					cout << "Enter n: ";
 					cin >> num;
 					push(num);
-				} break;	
+				} break;
 			case 2:{
+					pop();
+				} break;	
+			case 3:{
 					display();
 				} break;
-			case 3:{
+			case 4:{
 					exit(1);
 				} break;
 			default: cout << "Error!"; break;
@@ -55,6 +60,19 @@ void push(int n){
 		p->next=top;
 	}
 	top=p;
+}
+
+void pop(){
+	if (top==NULL){
+		cout << "Stack is empty. ";
+	}
+	else{
+		node *tmp=top;
+		cout << "\nPopped value " << top->data << endl;
+		top=top->next;
+		tmp->next=NULL;
+		delete(tmp);
+	}
 }
 
 void display(){
